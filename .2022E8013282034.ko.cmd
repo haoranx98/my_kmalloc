@@ -1,0 +1,1 @@
+cmd_/home/haoranx98/code/my_kmalloc/2022E8013282034.ko := ld -r -m elf_x86_64 -z noexecstack --build-id=sha1  -T scripts/module.lds -o /home/haoranx98/code/my_kmalloc/2022E8013282034.ko /home/haoranx98/code/my_kmalloc/2022E8013282034.o /home/haoranx98/code/my_kmalloc/2022E8013282034.mod.o;  true
