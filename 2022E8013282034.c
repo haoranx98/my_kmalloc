@@ -24,13 +24,13 @@ int __init kmalloc_InitFunc(void){
 	if(app_1KB_memory == NULL){
 		printk("Can not apply memory!!!!\n");
 	}else{
-		printk("1KB address is 0x%1x\n", (unsigned long)app_1KB_memory);
+		printk("1KB address is 0x%lx\n", (unsigned long)app_1KB_memory);
 	}
 	app_8KB_memory = (char *)kmalloc(MEMORY_8KB, GFP_KERNEL);
 	if(app_8KB_memory == NULL){
 		printk("Can not apply memory!!!!\n");
 	}else{
-		printk("8KB address is 0x%1x\n", (unsigned long)app_8KB_memory);
+		printk("8KB address is 0x%lx\n", (unsigned long)app_8KB_memory);
 	}
 
 	return 0;
@@ -39,15 +39,15 @@ int __init kmalloc_InitFunc(void){
 void __exit kmalloc_ExitFunc(void){
 	if(app_1KB_memory != NULL){
 		kfree(app_1KB_memory);
-		printk("free the kernel memory of 1KB");
+		printk("free the kernel memory of 1KB\n");
 	}
 
 	if(app_8KB_memory != NULL){
 		kfree(app_8KB_memory);
-		printk("free the kernel memory of 8KB");
+		printk("free the kernel memory of 8KB\n");
 	}
 
-	printk("Exit kernel module!!!!");
+	printk("Exit kernel module!!!!\n");
 }
 
 module_init(kmalloc_InitFunc);
